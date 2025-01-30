@@ -2,7 +2,14 @@
 const today = new Date();
 ---
 
+<noscript>
+  <style>
+    #back-to-top { display: none; }
+  </style>
+</noscript>
+
 <footer class="footer footer-center block mb-5 pt-10">
+  <dev id="back-to-top" class="btn btn-outline m-4" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>Back to Top</dev>
   <div class="pb-2">
     &copy; {today.getFullYear()} Manuel Ernesto
   </div>
@@ -12,4 +19,21 @@ const today = new Date();
     <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>
   </div>
 </footer>
-<style></style>
+
+<script is:inline>
+  function init(){
+    const doc = document.documentElement;
+    const backToTopButton = document.getElementById("back-to-top");
+    
+    if (doc.clientHeight >= doc.scrollHeight - 75) {
+      backToTopButton.style.display = "none";
+    }
+
+    console.log(doc.clientHeight + ", " + doc.scrollHeight);
+  }
+
+  init();
+
+  document.addEventListener("astro:after-swap", init);
+  
+</script>
