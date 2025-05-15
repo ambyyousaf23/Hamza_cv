@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalShopItem from "../../components/HorizontalShopItem.astro";
 import {getCollection} from "astro:content";
 import createSlug from "../../lib/createSlug";
-import HorizontalCard from "../../components/HorizontalCard.astro";
 
 export async function getStaticPaths({paginate}) {
     const items = await getCollection("store");
