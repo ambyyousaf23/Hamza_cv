@@ -64,7 +64,7 @@ pnpm run dev
 │   │   └── rss.xml.js
 │   ├── styles/
 │   │   └── global.css
-│   └── config.ts
+│   └── content.config.ts
 ├── public/
 │   ├── favicon.svg
 │   └── profile.webp
@@ -77,7 +77,7 @@ pnpm run dev
 
 ### Site config
 
-You can change global site configuration on '/src/config.ts' file:
+You can change global site configuration on '/src/content.config.ts' file:
 
 - **SITE_TITLE**: Default pages title.
 - **SITE_DESCRIPTION**: Default pages title.
@@ -124,7 +124,7 @@ The timeline components are used to confirm the CV.
 
 #### Card & HorizontalCard
 
-The cards are primarly used for the Project and the Blog components. They include a picture, a title, and a description. 
+The cards are primarily used for the Project and the Blog components. They include a picture, a title, and a description. 
 
 ```html
 <HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
@@ -178,9 +178,9 @@ The BaseLayout defines a general template for each new webpage you want to add. 
 
 ### Content
 
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at content.config.ts.
 
-#### config.ts
+#### content.config.ts
 
 Where you need to define your content collections, we define our content schemas too.
 

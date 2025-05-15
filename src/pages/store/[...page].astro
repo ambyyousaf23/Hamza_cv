@@ -2,12 +2,15 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalShopItem from "../../components/HorizontalShopItem.astro";
 import {getCollection} from "astro:content";
+import createSlug from "../../lib/createSlug";
+import HorizontalCard from "../../components/HorizontalCard.astro";
 
 export async function getStaticPaths({paginate}) {
     const items = await getCollection("store");
     items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
     return paginate(items, {pageSize: 10});
 }
+
 const {page} = Astro.props;
 ---
 
@@ -29,7 +32,7 @@ const {page} = Astro.props;
                                 badge={item.data.badge}
                                 details={item.data.details}
                                 tags={item.data.tags}
-                                url={"/store/" + item.slug}
+                                url={"/store/" + createSlug(item.data.title, item.id)}
                                 custom_link={item.data.custom_link}
                                 custom_link_label={item.data.custom_link_label}
                         />
