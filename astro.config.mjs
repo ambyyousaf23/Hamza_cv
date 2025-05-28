@@ -1,11 +1,8 @@
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  outDir: 'docs',
-  base: '/Hamza_cv/',
-  vite: {
-    build: {
-      cssCodeSplit: true, // This forces CSS files to be separate
-    },
-  },
+  base: '/Hamza_cv/', // ✅ THIS IS THE FIX
+  integrations: [tailwind()],
 });
