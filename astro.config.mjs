@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  output: 'static',
-  base: 'https://github.com/ambyyousaf23/Hamza_cv', // or '/repo-name/' if you're using a subdirectory
+  outDir: 'docs',  // change output folder from 'dist' to 'docs'
+  base: 'https://github.com/ambyyousaf23/Hamza_cv',      // relative URLs for assets
 });
